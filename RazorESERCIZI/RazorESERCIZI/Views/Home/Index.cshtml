@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+
+<div>
+
+    @{
+        List<int> ListaInteriRandom
+        = new List<int>();
+
+        Random random = new Random();
+
+        for(int i=0;i<20;i++)
+        {
+
+           var Nrandom = random.Next(1, 101);
+            ListaInteriRandom.Add(Nrandom);
+        }
+           foreach(var numero in ListaInteriRandom)
+    {
+        if(numero>30)
+        {
+                <Span>@numero</Span>
+            }
+        }
+
+    }
+
+</div>
+
+
+<div>
+
+
+
+@{
+
+    var dataOraAttuale = DateTime.Now;
+    //si puo scrivere anche @dataoraattuale
+    <span>@dataOraAttuale.ToString("dd-MM-yyyy:mm")</span>
+
+}
+
+</div>
